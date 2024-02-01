@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./angular.min.js"></script>
+    <script src="./bai4.js"></script>
+    <link rel="stylesheet" href="./bai4.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/js/bootstrap.js">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.1-web/css/regular.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.1-web/css/solid.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.1-web/css/brands.min.css">
+</head>
+ 
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <div class="row">
+            <div class="col-sm-8">
+                .<div class="card">
+                    <div class="card-header">
+                       THÔNG TIN SINH VIÊN
+                    </div>
+                    <div class="card-body">
+                 <form name="formsv">
+
+                    <div class="form-group">  
+                        <label for="">Họ và tên</label>  <br>                
+                         <input ng-model="name" style="width: 500px; border-color:#006400;" required minlength="5" maxlength="25" type="text" name="txtname"> 
+                         <br>                                        
+                        <label style="color: red;" ng-show="formsv.txtname.$invalid"> Vui lòng nhập họ tên</label>
+                      </div>   
+                      <div class="form-group">  
+                        <label for="">Điểm </label>  <br>                
+                         <input ng-model="mark" style="width: 500px; border-color:#006400;" required type="number" min="0" max="10" name="txtmark"> 
+                         <br>                                        
+                        <label style="color: red;" ng-show="formsv.txtmark.$invalid"> Điểm phải từ 0 đến 10</label>
+                      </div>  
+                      <div class="form-group">  
+                        <label for="">Email</label>  <br>                
+                         <input ng-model="email" style="width: 500px; border-color:#006400;" required  type="email" name="txtemail"> 
+                         <br>                                        
+                        <label style="color: red;" ng-show="formsv.txtemail.$invalid"> Email phải đúng định dạng</label>
+                      </div>  
+                      <div class="form-group">  
+                        <label for="">Số xe</label>  <br>                
+                         <input ng-model="soxe" style="width: 500px; border-color:#006400;" required pattern="5\d-[A-Z]\d-((\d{4})|(\d{3}\.\d{2}))"  type="text" name="txtsoxe"> 
+                         <br>                                        
+                        <label style="color: red;" ng-show="formsv.txtsoxe.$invalid"> Số xe không đúng định dạng </label>
+                      </div>  
+                                   
+                 </form>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button type="button" class="btn btn-outline-success">Lưu</button>
+                        <label style="color: #006400;" ng-show="formsv.$valid"> Chúc mừng bạn đã hoàn thành! </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

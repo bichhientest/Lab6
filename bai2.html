@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./angular.min.js"></script>
+    <script src="./bai2.js"></script>
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/js/bootstrap.js">
+</head>
+<body ng-app="myapp">
+    <div class="container" ng-controller="myctrl">
+        <div class="row" style="margin: 70px;">
+            <div class="col-sm-8">
+                .<div class="card">
+                    <div class="card-header">
+                        BÁN HÀNG GIẢI KHÁT
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered ">
+                             <thead>
+                              <tr>
+                                <th scope="col"><H5>TÊN HÀNG</H5></th>
+                                <th scope="col">SỐ LƯỢNG</th>
+                                <th scope="col">ĐƠN GIÁ</th>
+                                <th scope="col">THÀNH TIỀN</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="item in list_item" ng-init="item.quantity=1;">
+                                <td><input ng-model="item.buy" type="checkbox" name="" id="">{{item.name}}</td>
+                                <th ><input type="number" ng-model="item.quantity"></th>                              
+                                <td>{{item.price|currency}}</td>
+                                <td>{{item.price*item.quantity|currency}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="card-footer text-muted">
+                        TỔNG TIỀN:{{getamount()|currency}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

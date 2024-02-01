@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./angular.min.js"></script>
+    <script src="./demo.js"></script>
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/js/bootstrap.js">
+</head>
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <form>
+            <div class="mb-3">
+              <label  for="exampleInputEmail1" class="form-label">Email address</label>
+              <input ng-model-options="{updateOn:'blur'}"  ng-model="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input ng-model="pass" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input  ng-model="checked" type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Nhận thông tin tài khoản</label>
+            </div>
+
+           <div ng-show="radio" value="1">
+            <div  class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Tên tài khoản</label>
+                <input ng-model="pass" type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Số tài khoản</label>
+                <input ng-model="pass" type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+
+            <div ng-show="radio" value="2">
+                <div  class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Ngày hết hạn</label>
+                    <input ng-model="pass" type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">CGV</label>
+                    <input ng-model="pass" type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+                </div>
+
+     
+            <div ng-show="checked">
+<div class="form-check">
+  <input  ng-model="radio" value="1" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Default radio
+  </label>
+
+</div>
+<div class="form-check">
+  <input ng-model="radio" value="2" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Default checked radio
+  </label>
+</div>
+</div>
+            <button ng-click="handleclick()" type="button" class="btn btn-primary">Submit</button>
+          </form>
+          <hr>
+          <h2>
+            Email:{{email}}
+            <br>
+            Pass: {{pass}}
+            <br>
+            Check: {{checked}}
+            <br>
+            Radio: {{radio}}
+            
+          </h2>
+    </div>
+    
+</body>
+</html>
